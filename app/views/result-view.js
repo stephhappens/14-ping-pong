@@ -21,11 +21,11 @@ class ResultItemView {
   }
 
   render() {
-    this.el.querySelector('.input__player-1-name').innerText = this.model.players[0];
-    this.el.querySelector('.input__player-1-score').innerText = this.model.scores[0];
-    this.el.querySelector('.input__player-2-name').innerText = this.model.players[1];
-    this.el.querySelector('.input__player-2-score').innerText = this.model.scores[1];
-    this.el.querySelector('.input__time').innerText = this.model.dateTime;
+    this.el.querySelector('.grid__game--player_1').innerText = this.model.players[0];
+    this.el.querySelector('.grid__game--score_1').innerText = this.model.scores[0];
+    this.el.querySelector('.grid__game--player_2').innerText = this.model.players[1];
+    this.el.querySelector('.grid__game--score_2').innerText = this.model.scores[1];
+    this.el.querySelector('.grid__game--date').innerText = this.model.dateTime;
   }
 }
 
