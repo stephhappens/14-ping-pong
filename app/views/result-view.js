@@ -21,11 +21,11 @@ class ResultItemView {
   }
 
   render() {
-    this.el.querySelector('.input__player-1-name').innerText = this.model.game.players.name;
-    this.el.querySelector('.input__player-1-score').innerText = this.model.game.scores;
-    this.el.querySelector('.input__player-2-name').innerText = this.model.game.players.name;
-    this.el.querySelector('.input__player-2-score').innerText = this.model.game.scores;
-    this.el.querySelector('.input__time').innerText = this.model.game.dateTime;
+    this.el.querySelector('.input__player-1-name').innerText = this.model.players[0];
+    this.el.querySelector('.input__player-1-score').innerText = this.model.scores[0];
+    this.el.querySelector('.input__player-2-name').innerText = this.model.players[1];
+    this.el.querySelector('.input__player-2-score').innerText = this.model.scores[1];
+    this.el.querySelector('.input__time').innerText = this.model.dateTime;
   }
 }
 
@@ -38,8 +38,8 @@ export default class ResultListView {
   render() {
     this.el.innerHTML = '';
         // array loop our model
-    this.model.forEach((game) => {
-      const row = new ResultItemView(game);
+    this.model.games.forEach((one) => {
+      const row = new ResultItemView(one);
       row.render();
       this.el.appendChild(row.el);
     });

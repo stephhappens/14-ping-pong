@@ -7,17 +7,17 @@ export default class FormView {
             // stops the form actually submiting
       ev.preventDefault();
 
-      const player__1 = this.el.querySelector('#?????').value;
-      const score__1 = this.el.querySelector('#?????').value;
-      const player__2 = this.el.querySelector('#?????').value;
-      const score__2 = this.el.querySelector('#?????').value;
+      const player_1 = this.el.querySelector('#home-form-player_1').value;
+      const score_1 = this.el.querySelector('#home-form-score_1').value;
+      const player_2 = this.el.querySelector('#home-form-player_2').value;
+      const score_2 = this.el.querySelector('#home-form-score_2').value;
 
-      this.controller.logGame(player__1, player__2, score__1, score__2);
+      this.controller.logGames(player_1, player_2, score_1, score_2);
 
-      this.el.querySelector('#??????').value = '';
-      this.el.querySelector('#??????').value = '';
-      this.el.querySelector('#??????').value = '';
-      this.el.querySelector('#??????').value = '';
+      this.el.querySelector('#home-form-player_1').value = '';
+      this.el.querySelector('#home-form-score_1').value = '';
+      this.el.querySelector('#home-form-player_2').value = '';
+      this.el.querySelector('#home-form-score_2').value = '';
     };
     this.el.addEventListener('submit', onsubmit);
   }

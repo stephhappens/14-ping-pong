@@ -10,7 +10,8 @@ export default class AppController {
   start() {
     this.resultView = new ResultListView(this.appElement.querySelector('.grid__game'), this.model);
     this.FormView = new FormView(this.appElement.querySelector('.home-form'), this);
-    fetch('https://hidden-thicket-10616.herokuapp.com/games').then((res) => res.json()).then((data) => {
+    fetch('https://hidden-thicket-10616.herokuapp.com/games')
+    .then((res) => res.json()).then((data) => {
       this.model = data;
       this.resultView.model = this.model;
 
