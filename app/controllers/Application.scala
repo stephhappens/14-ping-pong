@@ -13,6 +13,8 @@ import play.api.mvc.BodyParsers._
 import play.api.libs.json.Json
 import play.api.libs.json.Json._
 
+import scala.collection.mutable
+
 object Application extends Controller{
 
   //create an instance of the table
@@ -22,7 +24,14 @@ object Application extends Controller{
   implicit val gameFormat = Json.format[Game]
 
 //  def index = DBAction { implicit rs =>
-//    Ok(views.html.index(cats.list))
+//    val formattedGames = List[FormattedGame]()
+//    games.list.map { dbGame =>
+//      val players = Array(dbGame.player_1, dbGame.player_2)
+//      val scores = Array(dbGame.score_1, dbGame.score_2)
+//      val game = new FormattedGame(dbGame.id, players, scores, dbGame.dateTime)
+//    }
+//
+//    Ok(formattedGames)
 //  }
 
 //  val gameForm = Form(
@@ -41,15 +50,20 @@ object Application extends Controller{
 
   def jsonFindAll = DBAction { implicit rs =>
     //define new list, and fill it with items modeled after sender contract
-    Ok(toJson(games.list))
+    val formattedGames = games.list.map { dbGame =>
+      val players = Array(dbGame.player_1, dbGame.player_2)
+      val scores = Array(dbGame.score_1, dbGame.score_2)
+      new FormattedGame(dbGame.id, players, scores, dbGame.dateTime.substring(0,10))
+    }
+    Ok(toJson(formattedGames))
   }
 
   def jsonInsert = DBAction(parse.json) { implicit rs =>
     rs.request.body.validate[Game].map { game =>
         val dateTime = DateTime.now
-        val dbGame = new DBGame(game.player_1, game.player_2, game.score_1, game.score_2, dateTime)
+        val dbGame = new DBGame(None, game.player_1, game.player_2, game.score_1, game.score_2, dateTime.toString)
         games.insert(dbGame)
-        Ok(toJson(dbGame))
+        Ok("all good, brother")
     }.getOrElse(BadRequest("invalid json"))    
   }
   
