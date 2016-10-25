@@ -7,33 +7,28 @@ export default class AppController {
     this.model = [];
   }
 
-    // grab data from api
-    // when data comes back -- set up some views to show data
-    // render views
-    // setup a view to handle form
   start() {
-    this.resultView = new ResultListView(this.appElement.querySelector('.results-table__list'), this.model);
+    this.resultView = new ResultListView(this.appElement.querySelector('.grid__game'), this.model);
     this.FormView = new FormView(this.appElement.querySelector('.home-form'), this);
-    fetch('http://tiny-tn.herokuapp.com/collections/dwb-bpm')
-        .then((res) => res.json())
-        .then((data) => {
-          this.model = data;
-          this.resultView.model = this.model;
+    fetch('https://hidden-thicket-10616.herokuapp.com/games').then((res) => res.json()).then((data) => {
+      this.model = data;
+      this.resultView.model = this.model;
 
-          this.resultView.render();
-        });
+      this.resultView.render();
+    });
   }
 
-  logGames(player__1, player__2, score__1, score__2, dateTime) {
-    fetch('http://tiny-tn.herokuapp.com/collections/dwb-bpm', {
+  logGames(player_1, player_2, score_1, score_2, dateTime) {
+    fetch('https://hidden-thicket-10616.herokuapp.com/games', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ player__1, player__2, score__1, score__2, dateTime }),
-    }).then((res) => res.json())
-    .then((data) => {
-      this.model = [data, ...this.model];
+      body: JSON.stringify({ player_1, player_2, score_1, score_2, dateTime }),
+    }).then((res) => res.json()).then((data) => {
+      this.model = [
+        data, ...this.model,
+      ];
       this.resultView.model = this.model;
 
       this.resultView.render();
