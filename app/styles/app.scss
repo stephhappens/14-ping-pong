@@ -4,3 +4,48 @@
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+
+.full-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'source Sans Pro', sans-serif;
+}
+
+.section__header {
+  margin: -8px;
+  background-color: #1d38c6;
+  text-align: center;
+  height: 3rem;
+  padding: 1rem;
+  color: white;
+}
+
+.section-grid {
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: inline-flex;
+
+}
+
+.grid__game {
+  padding: 0;
+  margin-left: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4)
+}
+
+.grid__game--date {
+  background-color: #1d38c6;
+  text-align: center;
+  color: white;
+  padding: 0.5rem;
+
+}
