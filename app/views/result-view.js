@@ -22,18 +22,18 @@ class ResultItemView {
 
   render() {
     // When Scala API is online
-    // this.el.querySelector('.grid__game--player_1').innerText = this.model.players[0];
-    // this.el.querySelector('.grid__game--score_1').innerText = this.model.scores[0];
-    // this.el.querySelector('.grid__game--player_2').innerText = this.model.players[1];
-    // this.el.querySelector('.grid__game--score_2').innerText = this.model.scores[1];
-    // this.el.querySelector('.grid__game--date').innerText = this.model.dateTime;
-    console.log(this.model);
+    this.el.querySelector('.grid__game--player_1').innerText = this.model.players[0];
+    this.el.querySelector('.grid__game--score_1').innerText = this.model.scores[0];
+    this.el.querySelector('.grid__game--player_2').innerText = this.model.players[1];
+    this.el.querySelector('.grid__game--score_2').innerText = this.model.scores[1];
+    this.el.querySelector('.grid__game--date').innerText = this.model.dateTime;
+    // console.log(this.model);
 
-    this.el.querySelector('.grid__game--player_1').innerText = this.model.players[0].name;
-    this.el.querySelector('.grid__game--score_1').innerText = this.model.players[0].score;
-    this.el.querySelector('.grid__game--player_2').innerText = this.model.players[1].name;
-    this.el.querySelector('.grid__game--score_2').innerText = this.model.players[1].score;
-    this.el.querySelector('.grid__game--date').innerText = this.model.time;
+    // this.el.querySelector('.grid__game--player_1').innerText = this.model.players[0].name;
+    // this.el.querySelector('.grid__game--score_1').innerText = this.model.players[0].score;
+    // this.el.querySelector('.grid__game--player_2').innerText = this.model.players[1].name;
+    // this.el.querySelector('.grid__game--score_2').innerText = this.model.players[1].score;
+    // this.el.querySelector('.grid__game--date').innerText = this.model.time;
   }
 }
 
