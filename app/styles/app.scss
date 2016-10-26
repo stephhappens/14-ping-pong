@@ -5,6 +5,10 @@
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 
+body {
+  margin: 0;
+}
+
 .full-page {
   display: flex;
   flex-direction: column;
@@ -13,8 +17,6 @@
 }
 
 .section__header {
-  height: 3rem;
-  margin: -8px;
   padding: 1rem;
   background-color: #1d38c6;
   color: #ffffff;
@@ -22,7 +24,7 @@
 }
 
 .section-grid {
-  min-height: 100vh;
+  flex-grow: 1;
   padding: 1rem;
 }
 
@@ -53,24 +55,19 @@
 }
 
 .grid__game--content {
-  text-align: center;
-
+  padding: 0.5rem;
 }
 
-.grid__game--content_1 {
-  text-align: left;
-  margin-top: 1rem;
-  padding-left: 0.5rem;
+.grid__game--row {
+  display: flex;
+  justify-content: space-between;
 }
 
-.grid__game--player_1 {
 
-  margin: none;
-}
 
-.grid__game--content_2 {
-  text-align: right;
-  padding-right: 0.5rem;
-  margin-top: -2.23rem;
-
+.btn--submit {
+  background-color:#ed510e;
+  padding: 0.5rem;
+  width: 100%;
+  color: white;
 }

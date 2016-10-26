@@ -9,12 +9,13 @@ class ResultItemView {
     this.el.innerHTML = `
     <div class="grid__game--date">Oct. 24 2:00 PM</div>
     <div class= "grid__game--content">
-      <div class= "grid__game--content_1">
+      <div class= "grid__game--row">
         <div class="grid__game--player_1"> Ryan </div>
-        <div class="grid__game--score_1"> 5  </div>
-      </div>
-      <div class="grid__game--content_2">
+        vs
         <div class="grid__game--player_2"> Dan </div>
+      </div>
+      <div class="grid__game--row">
+        <div class="grid__game--score_1"> 5  </div>
         <div class="grid__game--score_2"> 9 </div>
       </div>
     </div>`;
