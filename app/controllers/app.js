@@ -30,12 +30,13 @@ export default class AppController {
       body: JSON.stringify({
         player_1: player1,
         player_2: player2,
-        score_1: score1,
-        score_2: score2,
+        score_1: parseInt(score1),
+        score_2: parseInt(score2),
       }),
-    }).then((res) => res.json()).then((data) => {
+    }).then((res) => res.json())
+    .then((data) => {
       this.model.games = [
-        data.game, ...this.model.games,
+        ...this.model.games, data.game,
       ];
       this.resultView.model = this.model;
 
