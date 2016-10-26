@@ -1,6 +1,8 @@
 import ResultListView from '../views/result-view';
 import FormView from '../views/form-view';
 
+const url = 'https://obscure-anchorage-33466.herokuapp.com/games';
+
 export default class AppController {
   constructor(appElement) {
     this.appElement = appElement;
@@ -10,7 +12,7 @@ export default class AppController {
   start() {
     this.resultView = new ResultListView(this.appElement.querySelector('.grid'), this.model);
     this.FormView = new FormView(this.appElement.querySelector('.home-form'), this);
-    fetch('https://hidden-thicket-10616.herokuapp.com/games')
+    fetch(url)
     .then((res) => res.json()).then((data) => {
       this.model = data;
       this.resultView.model = this.model;
@@ -19,21 +21,21 @@ export default class AppController {
     });
   }
 
-  logGames(players, scores) {
-    fetch('https://hidden-thicket-10616.herokuapp.com/games', {
+  logGames(player1, player2, score1, score2) {
+    fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        player_1: players[0],
-        player_2: players[1],
-        score_1: scores[0],
-        score_2: scores[1],
+        player_1: player1,
+        player_2: player2,
+        score_1: score1,
+        score_2: score2,
       }),
     }).then((res) => res.json()).then((data) => {
-      this.model = [
-        data, ...this.model,
+      this.model.games = [
+        data.game, ...this.model.games,
       ];
       this.resultView.model = this.model;
 
