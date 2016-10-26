@@ -4,3 +4,73 @@
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+
+.full-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'source Sans Pro', sans-serif;
+}
+
+.section__header {
+  height: 3rem;
+  margin: -8px;
+  padding: 1rem;
+  background-color: #1d38c6;
+  color: #ffffff;
+  text-align: center;
+}
+
+.section-grid {
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.grid__game {
+  flex-basis: calc(100% / 4 - 2rem);
+  min-width: 8rem;
+  margin: auto;
+  padding: 0;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+}
+
+.grid__game--date {
+  padding: 0.5rem;
+  background-color: #1d38c6;
+  color: #ffffff;
+  text-align: center;
+}
+
+.grid__game--content {
+  text-align: center;
+
+}
+
+.grid__game--content_1 {
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+}
+
+.grid__game--player_1 {
+
+  margin: none;
+}
+
+.grid__game--content_2 {
+  text-align: right;
+  padding-right: 0.5rem;
+  margin-top: -2.23rem;
+
+}
