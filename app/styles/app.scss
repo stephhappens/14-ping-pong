@@ -8,6 +8,7 @@
 body {
   margin: 0;
 }
+
 .full-page {
   display: flex;
   flex-direction: column;
@@ -23,6 +24,7 @@ body {
 }
 
 .section-grid {
+  flex-grow: 1;
   padding: 1rem;
 }
 
