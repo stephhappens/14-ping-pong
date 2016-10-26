@@ -5,6 +5,9 @@
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
 
+body {
+  margin: 0;
+}
 .full-page {
   display: flex;
   flex-direction: column;
@@ -13,8 +16,6 @@
 }
 
 .section__header {
-  height: 3rem;
-  margin: -8px;
   padding: 1rem;
   background-color: #1d38c6;
   color: #ffffff;
@@ -22,7 +23,6 @@
 }
 
 .section-grid {
-  min-height: 100vh;
   padding: 1rem;
 }
 
